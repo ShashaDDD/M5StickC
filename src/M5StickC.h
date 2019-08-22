@@ -3,7 +3,7 @@
 //! Licensed under the MIT license. See LICENSE file in the project root for full license information.
 /**
  * \par Copyright (C), 2016-2017, M5Stack
- * \class M5Stack
+ * \class M5StickC
  * \brief   M5StickC library.
  * @file    M5StickC.h
  * @author  M5Stack
@@ -70,7 +70,8 @@
 #include "AXP192.h"
 
 #include "utility/Config.h"
-#include "utility/MPU6866.h"
+#include "utility/SH200Q.h"
+#include "utility/MPU6886.h"
 #include "utility/Button.h"
 #include "RTC.h"
 #include "IMU.h"
@@ -97,7 +98,8 @@ class M5StickC {
 
     IMU Imu;
 
-    MPU6866 Mpu6866;
+    MPU6886 Mpu6886;
+    SH200Q Sh200Q;
 
  private:
     bool isInited;
@@ -111,8 +113,10 @@ extern M5StickC M5;
 #define axp Axp
 #define imu Imu
 #define IMU Imu
-#define MPU6866 Mpu6866
-#define mpu6866 Mpu6866
+#define MPU6886 Mpu6886
+#define mpu6886 Mpu6886
+#define SH200Q Sh200Q
+#define sh200q Sh200Q
 
 #else
 #error “This library only supports boards with ESP32 processor.”	
