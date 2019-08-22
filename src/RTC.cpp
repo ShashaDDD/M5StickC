@@ -3,7 +3,11 @@
 
 
 RTC::RTC(){
-  Wire1.begin(21,22);  
+
+}
+
+void RTC::begin(void) {
+   Wire1.begin(21,22);   
 }
 
 void RTC::GetBm8563Time(void){
@@ -193,3 +197,4 @@ void RTC::SetData(RTC_DateTypeDef* RTC_DateStruct){
   Wire1.endTransmission();
 
 }
+
